@@ -75,7 +75,41 @@
         "right carousel-control" data-slide="next" href=
         "#myCarousel"><span class="icon-next"></span></a>
     </div><!-- /.carousel -->
+ <div class="container">
+<div class="col-md-4">
+	<div class="navbar-wrapper" >
+                <div class="navbar navbar-default navbar-static-top" style=
+                " margin-bottom:0px;">
+                    <div class="navbar-header">
+                        <button class="navbar-toggle collapsed" data-target=
+                        "#bs-example-navbar-collapse-1" data-toggle="collapse"
+                        type="button"><span class="sr-only">Toggle
+                        navigation</span> <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> <span class=
+                        "icon-bar"></span></button>
+                    </div>
 
+                    <div class="navbar-collapse collapse" id=
+                    "bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav" >
+                            <li>
+                                <a id="about">About Us</a>
+                            </li>
+							
+							<li>
+                                <a  id="event" >Events</a>
+                            </li>
+
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+</div>
+</div><!-- /navbar wrapper -->
+        
+		
+		
  <div class="container">  
 <div class="outerDiv">
     <div class="innerDiv"> 
@@ -83,15 +117,32 @@
 		<br/>
 		<p id="aboutus"  style="text-align: justify;">
 		</p>
+		<div class="" id="running-board">       
+		</div>
 	</div>
 	<br/>
 	<div class="innerDiv col-md-6" style="vertical-align:top">
 		<br/>
-		<button  class="btn btn-primary"  style="vertical-align:top">Donate <i>Now</i></button>
+		<div class="pr2 pl2" id="pledge-wrap">
+                                        
+										<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+										<input type="hidden" name="cmd" value="_donations">
+										<input type="hidden" name="business" value="thirukumaran.m@gmail.com">
+										<input type="hidden" name="lc" value="US">
+										<input type="hidden" name="item_name" value="Global Society Makers">
+										<input type="hidden" name="no_note" value="0">
+										<input type="hidden" name="currency_code" value="USD">
+										<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+										<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+										<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+										</form>
+
+
+                                    </div>
 		<br/>
 		<br/>
 		<br/>
-		<button class="btn btn-success" style="vertical-align:top"> Become a Volunteer </button>
+		<button class="btn btn-success" style="vertical-align:top ;"> Become a Volunteer </button>
 	</div>
 </div>
 <div>
@@ -108,15 +159,15 @@
 		
 	
 </div>
-	</div>
+
+</div>
 
     
     
 	<script>
-
-    
-	var json = {};
 	
+	var json={};
+	var  id2name = {};	
 	function nodeToObject(node) {
     var obj = {}, i;
     obj.nodeType = node.nodeType;
@@ -131,6 +182,8 @@
         for (i = 0; i < node.attributes.length; ++i)
             obj.attributes[node.attributes[i].nodeName] = node.attributes[i].nodeValue;
     return obj;
+	
+	
 }
 	function getjson(){
 					var ngo=window.location.href.split("?")[1];
@@ -158,23 +211,15 @@
 					$("#aboutus")[0].innerHTML=json['About_us'];
 					$("#title")[0].innerText=json['name'];
 	}
+	
+	
 
     $(function(){  
+					
 					getjson();
-					 $('.navbar li').click(function(e) {
-                                                        $('.navbar li.active').removeClass('active');
-                                                        var $this = $(this);
-                                                        if (!$this.hasClass('active')) {
-                                                            $this.addClass('active');
-                                                        }
-                                                        e.preventDefault();
-                                                        
-                                                            $("#form-"+signpref).hide();
-                                                            tog();
-                                                            $("#form-"+signpref).show();
-                                                    });
+					
+					 
                      
-                    $("#searchNgo").hide();
                     $('#myCarousel').carousel({
                     interval: 5000
                     });
@@ -193,10 +238,71 @@
                     $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
                     }
                     });      
-                                
-                   
-                });
+					
+				
+				
+				$("#about").click(function(){
+				
+				$("#running-board").hide();
+				
+				$("#aboutus").show();
+				});
+				
+				$("#event").click(function(){
+				
+				$("#running-board").show();
+				
+				$("#aboutus").hide();
+				});
+				
 				console.log(json);
+				
+				
+				$("#running-board").hide();
+				
+				id2name['MAD']="Make A difference";
+				id2name['Disha']="Disha";
+				var id = window.location.href.split("?")[1];
+						var  imgurl=['disha','women','education','enl-lives'];
+						var  ngo=window.location.href.split("?")[1];
+						$.ajax({"url":"event.php",success:function(result){	
+								global=result;
+								for(var i in  global){
+									json={};
+						 
+									json['desc']=global[i].eventDesc;
+									json['title']=global[i].eventTitle;
+									json['location']="Chennai,TN";
+									json['imgurl']="image/"+imgurl[i]+".jpg";
+									console.log("image/"+imgurl[i]+".jpg");
+									console.log(json);
+									
+									
+									var  card = '<div class="mobile-scroll-row-item col col-4" > <div class="bg-white border clip project-card-wrap project-card-wrap-tall-big rounded" data-project="{&quot;id&quot;:1879067372}"><div class="project-card relative"> <div class="project-thumbnail rounded-top clip"><a '+'"'
+			+'><img alt="Project image" class="fit" '+'src="'+json['imgurl']+
+			'" width="360px" height="200px" width="100%"></a> </div>    <div class="project-card-interior p1 h6 grey-dark"> <h6 class="project-title mobile-center"><a class="green-dark"  target="">'+json['title']+'</a></h6><p class="mb1 ellipsis mobile-hide"></p><p class="project-blurb mobile-hide">'+
+			json['desc']+'</p></div><div class="project-card-footer absolute-bottom bg-white rounded-bottom"><ul class="p1 list project-meta no-margin h6 mobile-hide"><li class="ellipsis"><a class="grey-dark" data-location='+
+			'"{&quot;id&quot;:2442047,&quot;name&quot;:&quot;Los Angeles&quot;,&quot;slug&quot;:&quot;los-angeles-ca&quot;,&quot;short_name&quot;:&quot;Los Angeles, CA&quot;,&quot;displayable_name&quot;:&quot;Los Angeles, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/los-angeles-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/los-angeles-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1413140583.9c6235f9668e8d2d9ba730b9dc23042007806d47&amp;woe_id=2442047&quot;}}} target=""><span class="ss-icon ss-location"></span> <span class="location-name">'+
+			json['location']+'</span></a> </li>  </ul> <div  class="project-stats-wrap pb1 pl1 pr1"> <div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">'+
+			'<strong>Successfully funded!</strong></div> <div class="project-pledged-wrap bg-grey mb1 clip"> <div class="project-pledged bg-green full-height"  style="width: 0.0%"></div></div><ul class="project-stats list no-margin h6 no-wrap">'
+			+ '<li class="first funded inline-block mr1">  <strong class="block h6"></strong> <span class="grey-dark"> </span></li> <li class="pledged inline-block mr1">  <strong class="block h6"><span class="money usd no-code"></span></strong>'+
+			'<span class="grey-dark"></span></li><li class="last successful inline-block"style="display: none;"><strong class="block h6"></strong><div class="deadline grey-dark"></div></li><li class="last ksr_page_timer inline-block" data-end_time="2014-11-06T12:07:54-05:00"> '+
+
+			'<strong class="block h6"></strong><div class="num"><strong class="block h6"></strong></div><div class="span text grey-dark" data-word="left"></div></li></ul></div></div></div></div><button  class="btn btn-block btn-primary">+Join</button></div>';
+						
+							$("#running-board").append(card);
+							}
+							
+						},
+						error:function(error){
+								global=error.ResponseText;
+						}
+						});
+						
+						
+						
+						
+				});
 				
                 
             
