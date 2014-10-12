@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/popular.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.knob.js"></script>
+	
+	<script src="js/xml2json.js"></script>
+
+    <title></title>
+    <style>
+.carousel-inner .active.left { left: -33%; }
+    .carousel-inner .next        { left:  33%; }
+    .carousel-inner .prev        { left: -33%; }
+
+    ul
+    {
+        list-style-type: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-12 col-sm-4 navbar-default">
+            <img src=
+            "http://m.c.lnkd.licdn.com/media/p/1/000/05b/067/203feec.png"
+            style="float:left">
+
+            <div class="navbar-wrapper" style="float:right;">
+                <div class="navbar navbar-default navbar-static-top" style=
+                " margin-bottom:0px;">
+                    <div class="navbar-header">
+                        <button class="navbar-toggle collapsed" data-target=
+                        "#bs-example-navbar-collapse-1" data-toggle="collapse"
+                        type="button"><span class="sr-only">Toggle
+                        navigation</span> <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> <span class=
+                        "icon-bar"></span></button>
+                    </div>
+
+                    <div class="navbar-collapse collapse" id=
+                    "bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav" style="float:right;">
+                            <li>
+                                <a id="home">Home</a>
+                            </li>
+							
+							<li>
+                                <a    id="volunt" target="_blank" href="volunteer.html">Volunteer</a>
+                            </li>
+
+                            <li>
+                                <a data-target="#signup-Modal" data-toggle=
+                                "modal" href="#" id="signup">Signup</a>
+                            </li>
+
+                            <li>
+                                <a id="search">Search NGOs</a>
+                            </li>
+
+                            <li>
+                                <a data-target="#createAppeal-Modal"
+                                data-toggle="modal" href="#" id=
+                                "createAppeal">Create Appeal</a>
+                            </li>
+
+                            <li>
+                                <a data-target="#signin-Modal" data-toggle=
+                                "modal" href="#" id="signin">Sign-In</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- /navbar wrapper -->
+        </div>
+    </div><!-- Carousel
+================================================== -->
+
+    <div class="carousel slide" id="myCarousel">
+        <!-- Indicators -->
+
+        <ol class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#myCarousel">
+            </li>
+
+            <li data-slide-to="1" data-target="#myCarousel"></li>
+
+            <li data-slide-to="2" data-target="#myCarousel"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="col-md-4"><img class="img-responsive" src=
+                "image/IMG_1.jpg"></div>
+            </div>
+
+            <div class="item">
+                <div class="col-md-4"><img class="img-responsive" src=
+                "image/IMG_2.jpg"></div>
+            </div>
+
+            <div class="item">
+                <div class="col-md-4"><img class="img-responsive" src=
+                "image/IMG_3.jpg"></div>
+            </div>
+        </div><!-- Controls -->
+        <a class="left carousel-control" data-slide="prev" href=
+        "#myCarousel"><span class="icon-prev"></span></a> <a class=
+        "right carousel-control" data-slide="next" href=
+        "#myCarousel"><span class="icon-next"></span></a>
+    </div><!-- /.carousel -->
+
+    <div class="container" id="homeDiv">
+        <div class="row">
+				<br>
+				<br>
+
+				<div class="col-md-4 text-center">
+					<input class="dial" id="percentage" readonly type="text" value=
+					"85">
+
+					<h2>Child Education</h2>
+
+					<p>Percentage of appeals completed.
+					Help to complete more....</p>
+				</div>
+
+				<div class="col-md-4 text-center">
+					<input class="dial" id="percentage" readonly type="text" value=
+					"65">
+
+					<h2>Environment Care</h2>
+
+					<p>Percentage of appeals completed.
+					Help to spread education....</p>
+				</div>
+
+				<div class="col-md-4 text-center">
+					<input class="dial" id="percentage" readonly type="text" value=
+					"35">
+
+					<h2>Healthy Living</h2>
+
+					<p>Percentage of appeals completed.
+					Save Lives.....</p>
+				</div>
+			</div>
+
+		
+        <div class="row mobile-scroll-row">
+			<br/>
+			<!--<iframe frameborder="0" src="http://www.tagxedo.com/art/bf565d4bb6c94790" width="300" height="300" scrolling="no"></iframe>-->
+
+			<h2> Highlighted Appeals</h2>
+            <div class="mobile-scroll-row-item col col-4">
+                <div class=
+                "bg-white border clip project-card-wrap project-card-wrap-tall-big rounded"
+                data-project="{&quot;id&quot;:167220657}">
+                    <div class="project-card relative">
+                        <div class="project-thumbnail rounded-top clip">
+                            <a href=
+                            "appeal.htm?childcare"
+                            target=""><img alt="Project image" class="fit" src=
+                            "image/enl-lives.jpg"
+                            width="100%"></a>
+                        </div>
+
+                        <div class="project-card-interior p1 h6 grey-dark">
+                            <h6 class="project-title mobile-center"><a class=
+                            "green-dark" 
+                            target="">Enlightning lives</a></h6>
+
+                            <p class="mb1 ellipsis mobile-hide">by Global Society Makers</p>
+
+                            <p class="project-blurb mobile-hide">Lighting up a village with mighty lights</p>
+                        </div>
+
+                        <div class=
+                        "project-card-footer absolute-bottom bg-white rounded-bottom">
+                        <ul class=
+                        "p1 list project-meta no-margin h6 mobile-hide">
+                                <li class="ellipsis">
+                                    <a class="grey-dark" data-location=
+                                    "{&quot;id&quot;:2379574,&quot;name&quot;:&quot;Chicago&quot;,&quot;slug&quot;:&quot;chicago-il&quot;,&quot;short_name&quot;:&quot;Chicago, IL&quot;,&quot;displayable_name&quot;:&quot;Chicago, IL&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;IL&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/chicago-il&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/chicago-il&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1413140583.efd86c3457a3d3c756cd2e81f5ee9e4e391dcb68&amp;woe_id=2379574&quot;}}}"
+                                    href="/discover/places/chicago-il?ref=city"
+                                    target=""><span class=
+                                    "ss-icon ss-location"></span> <span class=
+                                    "location-name">Madurai</span></a>
+                                </li>
+                            </ul>
+
+                            <div class="project-stats-wrap pb1 pl1 pr1">
+                                <div class=
+                                "project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+                                <strong>Successfully funded!</strong>
+                                </div>
+
+                                <div class=
+                                "project-pledged-wrap bg-grey mb1 clip">
+                                    <div class=
+                                    "project-pledged bg-green full-height"
+                                    style="width: 100%"></div>
+                                </div>
+
+                                <ul class=
+                                "project-stats list no-margin h6 no-wrap">
+                                    <li class="first funded inline-block mr1">
+                                    <strong class="block h6">1,00,000</strong>
+                                    <span class="grey-dark">funded</span></li>
+
+                                    <li class="pledged inline-block mr1">
+                                    <strong class="block h6"><span class=
+                                    "money usd no-code">1,00,000</span></strong>
+                                    <span class="grey-dark">pledged</span></li>
+
+                                    <li class="last successful inline-block"
+                                    style="display: none;">
+                                        <strong class=
+                                        "block h6">Funded</strong>
+
+                                        <div class="deadline grey-dark"></div>
+                                    </li>
+
+                                    <li class=
+                                    "last ksr_page_timer inline-block"
+                                    data-end_time="2014-11-18T13:03:23-05:00">
+                                        <strong class="block h6"></strong>
+                                        <div class="num">
+                                            <strong class=
+                                            "block h6"> Sept,2010</strong>
+                                        </div>
+
+                                        <div class="span text grey-dark"
+                                        data-word="left">
+                                            fulfilled
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-scroll-row-item col col-4">
+                <div class=
+                "bg-white border clip project-card-wrap project-card-wrap-tall-big rounded"
+                data-project="{&quot;id&quot;:1879067372}">
+                    <div class="project-card relative">
+                        <div class="project-thumbnail rounded-top clip">
+                            <a href= 
+                            "appeal.htm?education "
+                             
+                            target=""><img alt="Project image" class="fit" src=
+                           "image/disha.jpg" width="360px" height="220px"
+                            width="100%"></a>
+                        </div>
+
+                        <div class="project-card-interior p1 h6 grey-dark">
+                            <h6 class="project-title mobile-center"><a class=
+                            "green-dark" 
+							  href= "appeal.htm?education"
+                            
+                            target="">25 computers needed for visually-impaired</a></h6>
+
+                            <p class="mb1 ellipsis mobile-hide">by Sahana</p>
+
+                            <p class="project-blurb mobile-hide">25 computers needed for visually-impaired people. </p>
+                        </div>
+
+                        <div class=
+                        "project-card-footer absolute-bottom bg-white rounded-bottom">
+                        <ul class=
+                        "p1 list project-meta no-margin h6 mobile-hide">
+                                <li class="ellipsis">
+                                    <a class="grey-dark" data-location=
+                                    "{&quot;id&quot;:2442047,&quot;name&quot;:&quot;Los Angeles&quot;,&quot;slug&quot;:&quot;los-angeles-ca&quot;,&quot;short_name&quot;:&quot;Los Angeles, CA&quot;,&quot;displayable_name&quot;:&quot;Los Angeles, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/los-angeles-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/los-angeles-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1413140583.9c6235f9668e8d2d9ba730b9dc23042007806d47&amp;woe_id=2442047&quot;}}}"
+                                    href=
+										"appeal.htm?education"
+                                    target=""><span class=
+                                    "ss-icon ss-location"></span> <span class=
+                                    "location-name">Bangalore,KA</span></a>
+                                </li>
+                            </ul>
+
+                            <div class="project-stats-wrap pb1 pl1 pr1">
+                                <div class=
+                                "project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+                                <strong>Successfully funded!</strong>
+                                </div>
+
+                                <div class=
+                                "project-pledged-wrap bg-grey mb1 clip">
+                                    <div class=
+                                    "project-pledged bg-green full-height"
+                                    style="width: 33.8%"></div>
+                                </div>
+
+                                <ul class=
+                                "project-stats list no-margin h6 no-wrap">
+                                    <li class="first funded inline-block mr1">
+                                    <strong class="block h6">33%</strong>
+                                    <span class="grey-dark">funded</span></li>
+
+                                    <li class="pledged inline-block mr1">
+                                    <strong class="block h6"><span class=
+                                    "money usd no-code">5,00,000</span></strong>
+                                    <span class="grey-dark">pledged</span></li>
+
+                                    <li class="last successful inline-block"
+                                    style="display: none;">
+                                        <strong class=
+                                        "block h6">Funded</strong>
+
+                                        <div class="deadline grey-dark"></div>
+                                    </li>
+
+                                    <li class=
+                                    "last ksr_page_timer inline-block"
+                                    data-end_time="2014-11-06T12:07:54-05:00">
+                                        <strong class="block h6"></strong>
+
+                                        <div class="num">
+                                            <strong class=
+                                            "block h6">50</strong>
+                                        </div>
+
+                                        <div class="span text grey-dark"
+                                        data-word="left">
+                                            days to go
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-scroll-row-item col col-4">
+                <div class=
+                "bg-white border clip project-card-wrap project-card-wrap-tall-big rounded"
+                data-project="{&quot;id&quot;:56677006}">
+                    <div class="project-card relative">
+                        <div class="project-thumbnail rounded-top clip">
+                            <a href=
+                            "appeal.htm?health"
+                            target=""><img alt="Project image" class="fit" src="image/disability.gif"  width="360px"   height="200px"
+                            width="100%"></a>
+                        </div>
+
+                        <div class="project-card-interior p1 h6 grey-dark">
+                            <h6 class="project-title mobile-center"><a class=
+                            "green-dark" href=
+                            "appeal.htm?health"
+                            target="">Health</a></h6>
+
+                            <p class="mb1 ellipsis mobile-hide">by Global Society Makers</p>
+
+                            <p class="project-blurb mobile-hide">Fund-raising  for  kidney  transplant.</p>
+                        </div>
+
+                        <div class=
+                        "project-card-footer absolute-bottom bg-white rounded-bottom">
+                        <ul class=
+                        "p1 list project-meta no-margin h6 mobile-hide">
+                                <li class="ellipsis">
+                                    <a class="grey-dark" data-location=
+                                    "{&quot;id&quot;:2490383,&quot;name&quot;:&quot;Seattle&quot;,&quot;slug&quot;:&quot;seattle-wa&quot;,&quot;short_name&quot;:&quot;Seattle, WA&quot;,&quot;displayable_name&quot;:&quot;Seattle, WA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;WA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/seattle-wa&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/seattle-wa&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1413140583.b7444de89d7bce8874b8477fbcdeb3f8f51bb45f&amp;woe_id=2490383&quot;}}}"
+                                    href="/discover/places/seattle-wa?ref=city"
+                                    target=""><span class=
+                                    "ss-icon ss-location"></span> <span class=
+                                    "location-name">Coimbatore,TN</span></a>
+                                </li>
+                            </ul>
+
+                            <div class="project-stats-wrap pb1 pl1 pr1">
+                                <div class=
+                                "project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+                                <strong>Successfully funded!</strong>
+                                </div>
+
+                                <div class=
+                                "project-pledged-wrap bg-grey mb1 clip">
+                                    <div class=
+                                    "project-pledged bg-green full-height"
+                                    style="width: 100.55%"></div>
+                                </div>
+
+                                <ul class=
+                                "project-stats list no-margin h6 no-wrap">
+                                    <li class="first funded inline-block mr1">
+                                    <strong class="block h6">45,000</strong>
+                                    <span class="grey-dark">funded</span></li>
+
+                                    <li class="pledged inline-block mr1">
+                                    <strong class="block h6"><span class=
+                                    "money usd no-code">45,000</span></strong>
+                                    <span class="grey-dark">pledged</span></li>
+
+                                    <li class="last successful inline-block"
+                                    style="display: none;">
+                                        <strong class=
+                                        "block h6">Funded</strong>
+
+                                        <div class="deadline grey-dark"></div>
+                                    </li>
+
+                                    <li class=
+                                    "last ksr_page_timer inline-block"
+                                    data-end_time="2014-11-07T15:01:00-05:00">
+                                        <strong class="block h6"></strong>
+
+                                        <div class="num">
+                                            <strong class=
+                                            "block h6">27</strong>
+                                        </div>
+
+                                        <div class="span text grey-dark"
+                                        data-word="left">
+                                            days to go
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		
+		</div>
+	</div>
+	<br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container-fluid" id="searchNgo">
+        <div class="baraja-demo container-fluid">
+            <div class="col-md-2" style="text-align:center">
+                <ul class="baraja-container" id="baraja-el">
+                    <li>
+                        <img alt="image1" class="category" height="200px" src=
+                        "image/education.jpg" style="float:left" width="200px">
+
+                        <h2>Education</h2>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-2" style="text-align:center">
+                <ul class="baraja-container" id="baraja-el">
+                    <li>
+                        <img alt="image1" class="category" height="200px" src=
+                        "image/environment.jpg" style="float:left" width=
+                        "200px">
+
+                        <h2>Environment</h2>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-2" style="text-align:center">
+                <ul class="baraja-container" id="baraja-el">
+                    <li>
+                        <img alt="image1" class="category" height="200px" src=
+                        "image/poverty.jpg" style="float:left" width="200px">
+
+                        <h2>Poverty</h2>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-2" style="text-align:center">
+                <ul class="baraja-container" id="baraja-el">
+                    <li>
+                        <img alt="image1" class="category" height="200px" src=
+                        "image/women.jpg" style="float:left" width="200px">
+
+                        <h2>Women Empowerment</h2>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-2" style="text-align:center">
+                <ul class="baraja-container" id="baraja-el">
+                    <li>
+                        <img alt="image1" class="category" height="200px" src=
+                        "image/disability.gif" style="float:left" width=
+                        "200px">
+
+                        <h2>Disability</h2>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8"></div>
+
+    <div class="modal fade" id="signup-Modal" tabindex="-1">
+        <div class="modal-dialog" style="height:100%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal" type=
+                    "button"><span>&times;</span><span class=
+                    "sr-only">Close</span></button>
+
+                    <h4 class="modal-title" id="myModalLabel">Sign up for the
+                    social causes</h4>
+                </div>
+
+                <div class="modal-body">
+                    <nav class="navbar navbar-default">
+                        <div class="navbar-header"></div>
+
+                        <div>
+                            <ul class="nav navbar-nav menu">
+                                <li>
+                                    <a class="signupPref">NGO</a>
+                                </li>
+
+                                <li  class="active" >
+                                    <a class=" signupPref">Volunteer/Philanthropist</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    <form class="form-horizontal" id="form-n" name="form-n">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputName">Name</label>
+
+                            <div class="col-sm-10">
+                                <input class="form-control" id="inputName"
+                                placeholder="Name" type="text">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputTags">Causes</label>
+
+                            <div class="col-sm-10">
+                                <select class="form-control" id="vp-select-n">
+                                    <option>
+                                        Blood-Donation
+                                    </option>
+
+                                    <option>
+                                        Eye-Care
+                                    </option>
+
+                                    <option>
+                                        Education
+                                    </option>
+
+                                    <option>
+                                        Environment
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputTags"></label>
+
+                            <div class="col-sm-10" id="vp-selected-n"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputEmail">Email</label>
+
+                            <div class="col-sm-10">
+                                <input class="form-control" id="inputEmail"
+                                placeholder="Email" type="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputPassword3">Password</label>
+
+                            <div class="col-sm-10">
+                                <input class="form-control" id="inputPassword3"
+                                placeholder="Password" type="password">
+                            </div>
+                        </div>
+						
+						
+						
+						<div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputContact">Contact</label>
+
+                            <div class="col-sm-10">
+                                <input class="form-control" id="inputContact"
+                                placeholder="Contact No" type="number">
+                            </div>
+                        </div>
+						
+						<div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputAbout">About</label>
+
+                            <div class="col-sm-10">
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+						<div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputCity">City</label>
+
+                            <div class="col-sm-10">
+                                <input class="form-control" id="inputCity"
+                                placeholder="City" type="text">
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button class="btn btn-default" type=
+                                "submit" action="10.239.60.83:8080/ongoDataServ/user/7"  method="post">Sign in</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <form class="form-horizontal" id="form-v" name="form-v">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputName">Name</label>
+
+                            <div class="col-sm-10">
+                                <input class="form-control" id="inputName"
+                                placeholder="Name" type="text">
+                            </div>
+                        </div>
+						
+						<div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputContact">Contact</label>
+
+                            <div class="col-sm-10">
+                                <input class="form-control" id="inputContact"
+                                placeholder="Contact No" type="number">
+                            </div>
+                        </div>
+						
+						<div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputAddress">Address</label>
+
+                            <div class="col-sm-10">
+                                <input class="form-control" id="inputName"
+                                placeholder="Address" type="text">
+                            </div>
+                        </div>
+						
+						<div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputEmail">Email</label>
+
+                            <div class="col-sm-10">
+                                <input class="form-control" id="inputEmail"
+                                placeholder="Email" type="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputPassword3">Password</label>
+
+                            <div class="col-sm-10">
+                                <input class="form-control" id="inputPassword3"
+                                placeholder="Password" type="password">
+                            </div>
+                        </div>
+						
+						
+						<div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputCity">City</label>
+
+                            <div class="col-sm-10">
+                                <input class="form-control" id="inputName"
+                                placeholder="City" type="text">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputTags">Causes</label>
+
+                            <div class="col-sm-10">
+                                <select class="form-control" id="vp-select-v">
+                                    <option>
+                                        Blood-Donation
+                                    </option>
+
+                                    <option>
+                                        Eye-Care
+                                    </option>
+
+                                    <option>
+                                        Education
+                                    </option>
+
+                                    <option>
+                                        Environment
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+						
+						<div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputTags"></label>
+
+                            <div class="col-sm-10" id="vp-selected-v"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button class="btn btn-default" type=
+                                "submit">Sign in</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="createAppeal-Modal" tabindex="-1">
+        <div class="modal-dialog" style="height:100%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal" type=
+                    "button"><span>&times;</span><span class=
+                    "sr-only">Close</span></button>
+
+                    <h4 class="modal-title" id="createAappealLabel">Create
+                    Appeal</h4>
+                </div>
+
+                <div class="modal-body">
+                    <form class="form-horizontal" id="createForm" method="post"
+                    name="createForm">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputAppealFor">Appeal For</label>
+
+                            <div class="col-sm-7">
+                                <input class="form-control" id="inputAppealFor"
+                                placeholder="Appeal For" type="text">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputPurpose">Purpose</label>
+
+                            <div class="col-sm-7">
+                                <input class="form-control" id="inputPurpose"
+                                placeholder="Purpose" type="text">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputType">Type of Appeal</label>
+
+                            <div class="col-sm-7">
+                                <input class="form-control" id="inputType"
+                                placeholder="" type="text">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputDonation">Donation</label>
+
+                            <div class="col-sm-7">
+                                <input name="donation" type="radio" value=
+                                "1">Yes <input name="donation" type="radio"
+                                value="2">No
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputAmount">Amount</label>
+
+                            <div class="col-sm-7">
+                                <input class="form-control" id="inputOplead"
+                                placeholder="Amount" type="text">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputEnddate">End Date</label>
+
+                            <div class="col-sm-7">
+                                <input class="form-control" id="inputEnddate"
+                                placeholder="End Date" type="date">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-7">
+                                <input class="btn btn-default" id=
+                                "submitmerchant" name="submitappeal" onclick=
+                                "onSubmitPage();" type="button" value="Create">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="modal-footer"></div>
+        </div>
+    </div><script>
+
+    var  signpref="n";
+	var global="";
+    $("#form-"+signpref).hide();
+    function tog(){
+            if(signpref=="v")
+                    signpref="n";
+            else
+                    signpref="v";
+    }
+	
+	function nodeToObject(node) {
+    var obj = {}, i;
+    obj.nodeType = node.nodeType;
+    obj.nodeName = node.nodeName;
+    obj.nodeValue = node.nodeValue;
+    obj.childNodes = [];
+    obj.attributes = {};
+    if (node.childNodes && node.childNodes.length)
+        for (i = 0; i < node.childNodes.length; ++i)
+            obj.childNodes.push(nodeToObject(node.childNodes[i]));
+    if (node.attributes && node.attributes.length)
+        for (i = 0; i < node.attributes.length; ++i)
+            obj.attributes[node.attributes[i].nodeName] = node.attributes[i].nodeValue;
+    return obj;
+}
+
+    $(function(){  
+					$.ajax({
+						  url: "COP.php",
+						  success:function(result){
+						  
+						  global=result;
+						  global=  xml2json(result.responseText);
+						  },
+						  error:function(error){
+						  console.log(error.responseText);
+						  global=error;
+						  
+						  global=xml2json.parser(error.responseText);
+						  }
+						});
+                    
+                    $('.navbar li').click(function(e) {
+                                                        $('.navbar li.active').removeClass('active');
+                                                        var $this = $(this);
+                                                        if (!$this.hasClass('active')) {
+                                                            $this.addClass('active');
+                                                        }
+                                                        e.preventDefault();
+                                                        
+                                                            $("#form-"+signpref).hide();
+                                                            tog();
+                                                            $("#form-"+signpref).show();
+                                                    });
+                    /*$('.menu li a').click(function(e) {
+                          var $this = $(this);
+                          if (!$this.hasClass('active')) {
+                            $this.addClass('active');
+                          }
+                          $("#form-"+signpref).hide();
+                                tog();
+                                $("#form-"+signpref).show();
+                          e.preventDefault();
+                        });*/
+                
+                    
+                     //$("#percentage").val("10");  
+                     
+                    $("#searchNgo").hide();
+                    $('#myCarousel').carousel({
+                    interval: 5000
+                    });
+
+                    $('.carousel .item').each(function(){
+                    var next = $(this).next();
+                    if (!next.length) {
+                    next = $(this).siblings(':first');
+                    }
+                    next.children(':first-child').clone().appendTo($(this));
+
+                    if (next.next().length>0) {
+                    next.next().children(':first-child').clone().appendTo($(this));
+                    }
+                    else {
+                    $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+                    }
+                    });      
+                                
+                    $(".category").click(function(event){
+                            window.open("ngos.html?"+$(this)[0].src.split("/")[$(this)[0].src.split("/").length-1].split(".")[0], '_blank');
+                        });
+                    
+                    $(".dial").knob();
+                    
+                    $("#search").click(function(){
+                        
+                        $("#homeDiv").hide();
+                        $("#searchNgo").show();
+                    });
+                    $("#home").click(function(){
+                        
+                        $("#searchNgo").hide();
+                        $("#homeDiv").show();
+                    });
+					
+					$("#volunt").click(function(event){
+							window.open("volunteer.html","window");
+					});
+                     
+     
+                     $("#vp-select-v").prop("selectedIndex", -1);
+					 
+                     $("#vp-select-n").prop("selectedIndex", -1);
+                     $("#vp-select-v").change(function(event){
+                        $("#vp-selected-v").append('<span class="btn" id="option-'+$(this).val()+'">'+$(this).val()+'<\/span>'+'<span class="delete btn" id="close-'+$(this).val()+'">X<\/span>');
+                     });
+					 $("#vp-select-n").change(function(event){
+                        $("#vp-selected-n").append('<span class="btn" id="option-'+$(this).val()+'">'+$(this).val()+'<\/span>'+'<span class="delete btn" id="close-'+$(this).val()+'">X<\/span>');
+                     });
+                     
+                     $(".delete").click(function(event){
+                            //console.log($(this));
+                            //var id = $(this)[0].id;
+                            //console.log(id);
+                     });
+                });
+                
+            
+    </script>
+</body>
+</html>

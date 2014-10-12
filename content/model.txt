@@ -1,0 +1,69 @@
+user-signup:{
+				name:str
+				email-id:str
+				password:str
+				causes:[]
+				contact:no.
+				location-city:str
+				address:str
+				
+			}
+
+ngo-signup:{
+				name:str
+				email-id:str
+				password:str
+				about:text
+				tags:[]
+				contact:no.
+				location-city:[]
+			}
+appeal:{
+			
+			Description
+			Cause
+			by_whom
+			NGO/individual
+			cause:{
+					education:{
+								type: {
+											teaching:   skill
+														volunteer_no_rq
+														
+											fund:		amount
+														beneficiery
+										}				
+																
+							   }
+					
+					health-care:{
+								type: {
+											organ:   	name_of_org
+														specification
+											
+											blood:		blood-group
+													    units
+														
+											fund:		amount
+														beneficiery
+										}				
+																
+							   }
+									
+				 }	
+		}
+validation_appeal:{
+						status:[filed,accepted,started,inprogress]
+					}
+
+event:{
+			title
+			desc
+			start date
+			end date
+			ngo
+	  }					
+
+search:{
+		cause
+		}
