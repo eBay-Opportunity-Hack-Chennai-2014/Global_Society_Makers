@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Create Appeal</title>
+
+     <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/general.css" rel="stylesheet">
+	<link href="https://cdn.datatables.net/1.10.3/css/jquery.dataTables.css" rel="stylesheet">
+	<style>
+	tr:hover {
+    cursor: pointer;
+}
+	</style>
+    </head>
+    <body>
+        <div class="main2">
+            <!-- Static navbar -->
+            <div class="navbar navbar-default navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+						<h2>Appeal Status</h2>
+                     </div>
+                    <div class="navbar-collapse collapse">
+
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+            <div class="container">
+                <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Appeal for</th>
+                <th>Purpose</th>
+                <th>City</th>
+                <th>State</th>
+                <th>End date</th>
+                <th>Fund Required</th>
+				<th>Status</th>
+				<th></th>
+            </tr>
+        </thead>
+		 <tbody>
+            <tr  data-target="#createAppeal-Modal" data-toggle="modal">
+                <td >Disha</td>
+                <td>Education</td>
+                <td>Chennai</td>
+                <td>Tamil Nadu</td>
+                <td>2011/04/25</td>
+                <td>$320,800</td>
+				<td>New</td>
+				<td></td>
+            </tr>
+            <tr data-target="#createAppeal-Modal" data-toggle="modal">
+                <td>Disha</td>
+                <td>Health Care</td>
+                <td>Mumbai</td>
+                <td>Maharastra</td>
+                <td>2011/04/25</td>
+                <td>$20,800</td>
+				<td>Verified</td>
+				<td></td>
+            </tr>
+			<tr data-target="#createAppeal-Modal" data-toggle="modal">
+                <td>Disha</td>
+                <td>Health Care</td>
+                <td>Mumbai</td>
+                <td>Maharastra</td>
+                <td>2011/04/25</td>
+                <td>$20,800</td>
+				<td>Verified</td>
+				<td></td>
+            </tr>
+			<tr data-target="#createAppeal-Modal" data-toggle="modal">
+                <td>Disha</td>
+                <td>Health Care</td>
+                <td>Mumbai</td>
+                <td>Maharastra</td>
+                <td>2011/04/25</td>
+                <td>$20,800</td>
+				<td>Verified</td>
+				<td></td>
+            </tr>
+			<tr data-target="#createAppeal-Modal" data-toggle="modal">
+                <td>Disha</td>
+                <td>Health Care</td>
+                <td>Mumbai</td>
+                <td>Maharastra</td>
+                <td>2011/04/25</td>
+                <td>$20,800</td>
+				<td>Verified</td>
+				<td></td>
+            </tr>
+			</tbody>
+		</table>
+		<div class="modal fade" id="createAppeal-Modal" tabindex="-1">
+        <div class="modal-dialog" style="height:100%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal" type=
+                    "button"><span>&times;</span><span class=
+                    "sr-only">Close</span></button>
+
+                    
+                </div>
+
+                <div class="modal-body">
+                    <form class="form-horizontal" id="createForm" method="post"
+                    name="createForm">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputAppealFor">Appeal For</label>
+
+                            <div class="col-sm-7">
+                                <input class="form-control" id="inputAppealFor"
+                                placeholder="Appeal For" type="text" readonly value="Disha">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputPurpose">Purpose</label>
+
+                            <div class="col-sm-7">
+                                <input class="form-control" id="inputPurpose"
+                                placeholder="Purpose" type="text" readonly  value="Education">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputType">Type of Appeal</label>
+
+                            <div class="col-sm-7">
+                                <input class="form-control" id="inputType"
+                                placeholder="" type="text" readonly  value="Education">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputDonation">Donation</label>
+
+                            <div class="col-sm-7">
+                                <input name="donation" type="radio" selected value=
+                                "1">Yes <input name="donation" type="radio"
+                                value="2">No
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputAmount">Amount</label>
+
+                            <div class="col-sm-7">
+                                <input class="form-control" id="inputOplead"
+                                placeholder="Amount" type="text" value="320,800">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" for=
+                            "inputEnddate">End Date</label>
+
+                            <div class="col-sm-7">
+                                <input class="form-control" id="inputEnddate"
+                                placeholder="End Date" type="date">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-7">
+                                <input class="btn btn-default" id=
+                                "submitmerchant" name="submitappeal" onclick=
+                                "onSubmitPage();" type="button" value="Update">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+           </div>
+
+            <div class="modal-footer"></div>
+        </div>
+
+            </div>
+        </div>
+    </body>
+    <script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/tab.js"></script>
+	<script src="https://cdn.datatables.net/1.10.3/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/plug-ins/a5734b29083/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <script type="text/javascript">
+       $(document).ready(function() {
+    $('#example').dataTable();
+	} );
+
+
+
+
+
+
+
+    </script>
+</html>

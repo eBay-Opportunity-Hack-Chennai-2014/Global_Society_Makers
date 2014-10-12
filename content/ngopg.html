@@ -1,0 +1,311 @@
+<html>
+<head>
+
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/popular.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.knob.js"></script>
+	
+	<script src="js/xml2json.js"></script>
+
+    <title></title>
+    <style>
+.carousel-inner .active.left { left: -33%; }
+    .carousel-inner .next        { left:  33%; }
+    .carousel-inner .prev        { left: -33%; }
+
+    ul
+    {
+        list-style-type: none;
+    }
+		
+.outerDiv {
+    display: inline-flex;  <== This is responsible for vertical alignment
+    height: 400px;
+}
+
+.innerDiv {
+    margin: auto 5px;     
+}	
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <br/>
+        <br/>
+		
+		<center ><h2 id="title">Title</h2></center>
+        <br/>
+		
+	</div>
+
+    <div class="carousel slide" id="myCarousel">
+        <!-- Indicators -->
+
+        <ol class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#myCarousel">
+            </li>
+
+            <li data-slide-to="1" data-target="#myCarousel"></li>
+
+            <li data-slide-to="2" data-target="#myCarousel"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="col-md-4"><img class="img-responsive" src=
+                "image/IMG_1.jpg"></div>
+            </div>
+
+            <div class="item">
+                <div class="col-md-4"><img class="img-responsive" src=
+                "image/IMG_2.jpg"></div>
+            </div>
+
+            <div class="item">
+                <div class="col-md-4"><img class="img-responsive" src=
+                "image/IMG_3.jpg"></div>
+            </div>
+        </div><!-- Controls -->
+        <a class="left carousel-control" data-slide="prev" href=
+        "#myCarousel"><span class="icon-prev"></span></a> <a class=
+        "right carousel-control" data-slide="next" href=
+        "#myCarousel"><span class="icon-next"></span></a>
+    </div><!-- /.carousel -->
+ <div class="container">
+<div class="col-md-4">
+	<div class="navbar-wrapper" >
+                <div class="navbar navbar-default navbar-static-top" style=
+                " margin-bottom:0px;">
+                    <div class="navbar-header">
+                        <button class="navbar-toggle collapsed" data-target=
+                        "#bs-example-navbar-collapse-1" data-toggle="collapse"
+                        type="button"><span class="sr-only">Toggle
+                        navigation</span> <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> <span class=
+                        "icon-bar"></span></button>
+                    </div>
+
+                    <div class="navbar-collapse collapse" id=
+                    "bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav" >
+                            <li>
+                                <a id="about">About Us</a>
+                            </li>
+							
+							<li>
+                                <a  id="event" >Events</a>
+                            </li>
+
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+</div>
+</div><!-- /navbar wrapper -->
+        
+		
+		
+ <div class="container">  
+<div class="outerDiv">
+    <div class="innerDiv"> 
+		<br/>
+		<br/>
+		<p id="aboutus"  style="text-align: justify;">
+		</p>
+		<div class="" id="running-board">       
+		</div>
+	</div>
+	<br/>
+	<div class="innerDiv col-md-6" style="vertical-align:top">
+		<br/>
+		<div class="pr2 pl2" id="pledge-wrap">
+                                        
+										<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+										<input type="hidden" name="cmd" value="_donations">
+										<input type="hidden" name="business" value="thirukumaran.m@gmail.com">
+										<input type="hidden" name="lc" value="US">
+										<input type="hidden" name="item_name" value="Global Society Makers">
+										<input type="hidden" name="no_note" value="0">
+										<input type="hidden" name="currency_code" value="USD">
+										<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+										<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+										<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+										</form>
+
+
+                                    </div>
+		<br/>
+		<br/>
+		<br/>
+		<button class="btn btn-success" style="vertical-align:top ;"> Become a Volunteer </button>
+	</div>
+</div>
+<div>
+	<div class="innerDiv">
+					
+	</div>
+</div>
+<div>
+	<br/>
+
+	<div class="innerDiv">
+	<p id="contact"></p>
+	</div>
+		
+	
+</div>
+
+</div>
+
+    
+    
+	<script>
+	
+	var json={};
+	var  id2name = {};	
+	function nodeToObject(node) {
+    var obj = {}, i;
+    obj.nodeType = node.nodeType;
+    obj.nodeName = node.nodeName;
+    obj.nodeValue = node.nodeValue;
+    obj.childNodes = [];
+    obj.attributes = {};
+    if (node.childNodes && node.childNodes.length)
+        for (i = 0; i < node.childNodes.length; ++i)
+            obj.childNodes.push(nodeToObject(node.childNodes[i]));
+    if (node.attributes && node.attributes.length)
+        for (i = 0; i < node.attributes.length; ++i)
+            obj.attributes[node.attributes[i].nodeName] = node.attributes[i].nodeValue;
+    return obj;
+	
+	
+}
+	function getjson(){
+					var ngo=window.location.href.split("?")[1];
+					console.log(ngo);
+					if(ngo=='MAD'){
+						
+						json['name']="Make A Difference";
+						json['emaial']="xyz.gmail.com";
+						json['phone']="09560718583";
+						json["About_us"]="Make A Difference(MAD) is a platform that empowers youth to take responsibility. To provide children at risk a positive learning ecosystem that will help them unleash their potential.MAD volunteers implement projects that provide these children with the skills that guarantee employment, role models they can relate to and exposure that helps them dream big. <br/>Even the most vulnerable children in the society are able to realize Equitable outcomesMost Vulnerable: Children who do not have a family to support them, children who's family is unable to provide a safe space to grow up in. Equitable Outcomes: <ul><li>	Personal: Has a safe environment to grow and flourish </li><li>	Educational: Has access to quality education </li><li>	Financial: Has access to financial instruments and has the ability to earn and save </li><li>	Exploitation & Freedoms : Has the ability to fight against exploitative elements <li></ul>"+
+										  "<h4>Programmes</h4><br/> <b>ED Support Programme (Education Support)</b><ul><li>	A mentoring program where volunteers act as role models and create positive development ecosystem for children. </li><li>	Volunteers recruited deliver the Cambridge University Press curriculum to improve language skills in children.  </li></ul>  <b> Placements Programme (Discover)</b><ul><li>	Life-skills and career-aspiration generating programme. Helps children dream and pursue their passion by giving them exposure and experiences in multiple fields of interest. </li><li>	Life skills training, career awareness workshops and workplace simulations conducted every week. </li><li>	1 such activity planned for each child every month.  </li></ul><b> Infrastructure Project (Fortify)</b>  <ul><li>	Creating, maintaining and making use of active libraries for children. </li><li>	Supplements the English project by helping children develop language skills and reading habits. </li><li>	Improves center environment by providing infrastructural changes.</li></ul><b> Life Skills Project (Dream Camp) </b><ul><li>	Year end camps, inbound or outbound, organized to identify and boost the skills of children. </li><li>	Wide range of sessions such as construction club, aero modeling, hygiene etc. are conducted.  </li></ul><b>Youth Development Project (Leadership x Design: LxD)</b><ul><li>	Youth leadership development program spanning 3 years </li><li>	Participants undergo 100+ hours of direct training and has dedicated mentor support round the year.</li></ul><b> Innovation Hub[e</b><ul><li>	Innovative ideas of social change is sourced nationally and shortlisted by a panel of experts </li><li>Winning ideas are provided with lean start up training and weekly mentorship support </li><li>	Successful projects are given the MAD platform to scale across 23 cities in under a year’s time   </li> </ul>";
+						json["causes"]=["education"];
+						json["Location"]=['chennai',"bangalore","delhi"];
+						console.log(json);
+					}
+					if(ngo=='Disha'){
+						json['name']="Disha";
+						json['emaial']="xyz.gmail.com";
+						json['phone']="09560718583";
+						json["About_us"]=" <br> <b>Vision</b> <br> To establish an equitable society where there is no discrimination on the basis of gender, race, religion and caste and which provides equal social, economic and political opportunities <br> <b>Mission</b> <br> To mobilise women, poor, downtrodden and weaker sections into sustainable groups so as to achieve their social, economic and political empowerment <br> <b>Strategy</b> <br> To mobilise the target group and strengthen them in a manner that they are able to address their developmental needs themselves.";
+					
+						json["causes"]=["education"];
+						json["Location"]=['chennai',"bangalore","delhi"];
+					}
+					$("#aboutus")[0].innerHTML=json['About_us'];
+					$("#title")[0].innerText=json['name'];
+	}
+	
+	
+
+    $(function(){  
+					
+					getjson();
+					
+					 
+                     
+                    $('#myCarousel').carousel({
+                    interval: 5000
+                    });
+
+                    $('.carousel .item').each(function(){
+                    var next = $(this).next();
+                    if (!next.length) {
+                    next = $(this).siblings(':first');
+                    }
+                    next.children(':first-child').clone().appendTo($(this));
+
+                    if (next.next().length>0) {
+                    next.next().children(':first-child').clone().appendTo($(this));
+                    }
+                    else {
+                    $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+                    }
+                    });      
+					
+				
+				
+				$("#about").click(function(){
+				
+				$("#running-board").hide();
+				
+				$("#aboutus").show();
+				});
+				
+				$("#event").click(function(){
+				
+				$("#running-board").show();
+				
+				$("#aboutus").hide();
+				});
+				
+				console.log(json);
+				
+				
+				$("#running-board").hide();
+				
+				id2name['MAD']="Make A difference";
+				id2name['Disha']="Disha";
+				var id = window.location.href.split("?")[1];
+						var  imgurl=['disha','women','education','enl-lives'];
+						var  ngo=window.location.href.split("?")[1];
+						$.ajax({"url":"event.php",success:function(result){	
+								global=result;
+								for(var i in  global){
+									json={};
+						 
+									json['desc']=global[i].eventDesc;
+									json['title']=global[i].eventTitle;
+									json['location']="Chennai,TN";
+									json['imgurl']="image/"+imgurl[i]+".jpg";
+									console.log("image/"+imgurl[i]+".jpg");
+									console.log(json);
+									
+									
+									var  card = '<div class="mobile-scroll-row-item col col-4" > <div class="bg-white border clip project-card-wrap project-card-wrap-tall-big rounded" data-project="{&quot;id&quot;:1879067372}"><div class="project-card relative"> <div class="project-thumbnail rounded-top clip"><a '+'"'
+			+'><img alt="Project image" class="fit" '+'src="'+json['imgurl']+
+			'" width="360px" height="200px" width="100%"></a> </div>    <div class="project-card-interior p1 h6 grey-dark"> <h6 class="project-title mobile-center"><a class="green-dark"  target="">'+json['title']+'</a></h6><p class="mb1 ellipsis mobile-hide"></p><p class="project-blurb mobile-hide">'+
+			json['desc']+'</p></div><div class="project-card-footer absolute-bottom bg-white rounded-bottom"><ul class="p1 list project-meta no-margin h6 mobile-hide"><li class="ellipsis"><a class="grey-dark" data-location='+
+			'"{&quot;id&quot;:2442047,&quot;name&quot;:&quot;Los Angeles&quot;,&quot;slug&quot;:&quot;los-angeles-ca&quot;,&quot;short_name&quot;:&quot;Los Angeles, CA&quot;,&quot;displayable_name&quot;:&quot;Los Angeles, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/los-angeles-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/los-angeles-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1413140583.9c6235f9668e8d2d9ba730b9dc23042007806d47&amp;woe_id=2442047&quot;}}} target=""><span class="ss-icon ss-location"></span> <span class="location-name">'+
+			json['location']+'</span></a> </li>  </ul> <div  class="project-stats-wrap pb1 pl1 pr1"> <div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">'+
+			'<strong>Successfully funded!</strong></div> <div class="project-pledged-wrap bg-grey mb1 clip"> <div class="project-pledged bg-green full-height"  style="width: 0.0%"></div></div><ul class="project-stats list no-margin h6 no-wrap">'
+			+ '<li class="first funded inline-block mr1">  <strong class="block h6"></strong> <span class="grey-dark"> </span></li> <li class="pledged inline-block mr1">  <strong class="block h6"><span class="money usd no-code"></span></strong>'+
+			'<span class="grey-dark"></span></li><li class="last successful inline-block"style="display: none;"><strong class="block h6"></strong><div class="deadline grey-dark"></div></li><li class="last ksr_page_timer inline-block" data-end_time="2014-11-06T12:07:54-05:00"> '+
+
+			'<strong class="block h6"></strong><div class="num"><strong class="block h6"></strong></div><div class="span text grey-dark" data-word="left"></div></li></ul></div></div></div></div><button  class="btn btn-block btn-primary">+Join</button></div>';
+						
+							$("#running-board").append(card);
+							}
+							
+						},
+						error:function(error){
+								global=error.ResponseText;
+						}
+						});
+						
+						
+						
+						
+				});
+				
+                
+            
+    </script>
+</body>
+</html>
