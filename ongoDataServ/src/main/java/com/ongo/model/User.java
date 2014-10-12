@@ -4,6 +4,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "User")
 public class User {
+
     private int id;
     private String name;
     private String role;
@@ -18,7 +19,8 @@ public class User {
     private String appealCategory;
     private String appealDate;
     private String appealExpiryDate;
-     
+	private String loginId;
+	
     public int getId() {
         return id;
     }
@@ -102,6 +104,12 @@ public class User {
 	}
 	public void setAppealExpiryDate(String appealExpiryDate) {
 		this.appealExpiryDate = appealExpiryDate;
+	}
+	public String getLoginId() {
+		return loginId;
+	}
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
 	}
 
 }
